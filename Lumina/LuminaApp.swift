@@ -9,9 +9,17 @@ import SwiftUI
 
 @main
 struct LuminaApp: App {
+    @StateObject private var viewModel = ContentViewModel()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            if viewModel.hasEnteredApp{
+                ContentView()
+                                .preferredColorScheme(viewModel.isDarkMode ? .dark : .light)
+            }
+            else{
+                EntryView()
+                    .preferredColorScheme(.light)
+            }
         }
     }
 }
