@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @StateObject private var viewModel = ContentViewModel()
     @State private var timeRemaining: Int = 240
-    @State var percentFill = 0.2
+    @State var percentFill = 0.0
     @Environment(\.dismiss) var dismiss
     
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
