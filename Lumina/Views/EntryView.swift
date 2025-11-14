@@ -15,7 +15,7 @@ struct EntryView: View {
         NavigationStack{
             ZStack{
                 VStack{
-                    Text("Master your minutes to \t\t master your life \t \t").font(.system(size: 35, weight: .medium, design: .default)).padding(.horizontal, 20).padding(.top, 50)
+                    Text("Master your minutes to \t\t master your life \t \t").font(.system(size: 35, weight: .medium, design: .default)).padding(.horizontal, 20).padding(.top, 60)
                     
                     Spacer()
                     
@@ -28,7 +28,7 @@ struct EntryView: View {
                     Button {
                         viewModel.hasEnteredApp = true
                         navigateToMain = true
-                        viewModel.computeUsername()
+                        
                     } label: {
                         Text("Enter")
                             .font(.system(size: 27, weight: .heavy))
@@ -37,19 +37,11 @@ struct EntryView: View {
                             .background(Color.purple)
                             .clipShape(RoundedRectangle(cornerRadius: 18))
                     }
-                    .buttonStyle(.plain)
-                    
-                    
-                    .padding(.top, -150)
+                    .buttonStyle(GentlePressStyle())
+                    .padding(.top, -165)
                 }
                 
-                TextField(text: $viewModel.username) {
-                    Text("What Should I Call You? (Optional)")
-                }.padding().frame(width: 347, height: 20)
-                    .font(.system(size: 20, weight: .semibold)).padding(.vertical).overlay{
-                    RoundedRectangle(cornerRadius: 5).fill(.clear).stroke(Color.gray, lineWidth: 1)}
-                    
-                    .padding(.top, 400)
+
             }
             .navigationDestination(isPresented: $navigateToMain) {
                 HomeView()

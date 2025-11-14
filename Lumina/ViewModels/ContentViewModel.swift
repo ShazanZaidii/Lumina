@@ -10,7 +10,6 @@ import SwiftUI
 
 class ContentViewModel: ObservableObject{
     //UserDefaults
-    @AppStorage("username") var username: String = ""
     @AppStorage("isDarkMode") var isDarkMode: Bool = false
     @AppStorage("hasEnteredApp") var hasEnteredApp: Bool = false
     
@@ -46,7 +45,6 @@ class ContentViewModel: ObservableObject{
     
     @Published var showStats = true
     
-    @Published var demo = 0.0
     
 
     
@@ -81,10 +79,6 @@ class ContentViewModel: ObservableObject{
         return numberFormatter
     }
     
-    func computeUsername(){
-        if hasEnteredApp && username.isEmpty{
-            username = "Lumie"
-        }
-    }
+
 
 }
