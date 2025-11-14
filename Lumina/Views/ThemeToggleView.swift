@@ -19,7 +19,7 @@ struct ThemeToggleView: View {
             ZStack(alignment: viewModel.isDarkMode ? .trailing : .leading) {
                 // Capsule background
                 Capsule()
-                    .fill(viewModel.isDarkMode ? Color.white.opacity(0.6) : Color.gray.opacity(0.2))
+                    .fill(Color.gray.opacity(0.2))
                     .frame(width: 120, height: 45)
                     .overlay {
                         Text(viewModel.isDarkMode ? "Dark" : "Light").padding(.leading, CGFloat(viewModel.togglePadding))
@@ -33,7 +33,8 @@ struct ThemeToggleView: View {
                     if viewModel.isDarkMode {
                         Image(systemName: "moon.circle.fill")
                             .resizable()
-                            .foregroundStyle(.black)
+                            .foregroundStyle(.white)
+                            
                             .matchedGeometryEffect(id: "icon", in: animation)
                             .frame(width: 40, height: 40)
                             .padding(3)
@@ -41,7 +42,7 @@ struct ThemeToggleView: View {
                     } else {
                         Image(systemName: "moon.circle.fill")
                             .resizable()
-                            .foregroundStyle(.yellow)
+                            .foregroundStyle(.black)
                             .matchedGeometryEffect(id: "icon", in: animation)
                             .frame(width: 40, height: 40)
                             .padding(3)

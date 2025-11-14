@@ -13,7 +13,7 @@ struct LuminaApp: App {
     var body: some Scene {
         WindowGroup {
             if viewModel.hasEnteredApp{
-                ContentView()
+                HomeView()
                                 .preferredColorScheme(viewModel.isDarkMode ? .dark : .light)
             }
             else{
