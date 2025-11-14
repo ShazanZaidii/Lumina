@@ -171,9 +171,12 @@ struct HomeView: View {
                 }
                 if timeRemaining == 0 {
                     viewModel.timeUp = true
-                    
-                    
+                    viewModel.pause = true
+                    viewModel.controlsImageIndex = 1
+                    viewModel.recordSession()
+
                 }
+
                 viewModel.timeRemaining = timeRemaining
                 if viewModel.focusOnCountdown{
                     viewModel.percentFill = 1.0 - Double(timeRemaining) / Double(viewModel.focusCountdown[viewModel.focusCountdownIndex ])
