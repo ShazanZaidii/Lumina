@@ -6,8 +6,13 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		3612E5D52ECC5F73005051BC /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 3612E5D32ECC5F67005051BC /* .gitignore */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		36083FC92EC3C66C0040ED23 /* Lumina.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lumina.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3612E5D32ECC5F67005051BC /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -32,6 +37,7 @@
 		36083FC02EC3C66C0040ED23 = {
 			isa = PBXGroup;
 			children = (
+				3612E5D32ECC5F67005051BC /* .gitignore */,
 				36083FCB2EC3C66C0040ED23 /* Lumina */,
 				36083FCA2EC3C66C0040ED23 /* Products */,
 			);
@@ -109,6 +115,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3612E5D52ECC5F73005051BC /* .gitignore in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

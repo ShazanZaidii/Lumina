@@ -75,9 +75,6 @@ class ContentViewModel: ObservableObject {
     // MARK: - Init
     init() {
         loadDailyMinutes()
-        // Derive totalMinutes from persisted dailyMinutes to avoid drift (no mock data).
-        totalMinutes = dailyMinutes.values.reduce(0, +)
-        // Do not seed random totals or daily entries.
     }
 
     // MARK: - Helpers
@@ -189,9 +186,6 @@ class ContentViewModel: ObservableObject {
         if totalMinutes >= 60 {
             hoursComputed = totalMinutes/60
             minutesComputed = totalMinutes%60
-        } else {
-            hoursComputed = 0
-            minutesComputed = totalMinutes
         }
     }
 }
