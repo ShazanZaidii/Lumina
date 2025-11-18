@@ -38,7 +38,7 @@ struct StatsView: View {
                                     Text("Overview")
                                         .font(.system(size: 26, weight: .semibold))
                                     
-                                    Text("\(viewModel.totalMinutes) min")
+                                    Text(viewModel.hoursComputed == 0 ? "\(viewModel.totalMinutes) min"  : "\(viewModel.hoursComputed) hrs : \(viewModel.minutesComputed) min" )
                                         .font(.system(size: 44, weight: .bold))
                                     
                                     Text("\(viewModel.totalFocusSessions) focus · \(viewModel.totalBreakSessions) breaks")
@@ -105,6 +105,7 @@ struct StatsView: View {
                             Rectangle().frame(width:20, height: 20).foregroundStyle(viewModel.isDarkMode ? .gray : Color(white: 0.80).opacity(0.80))
                             Text("Breaks")
                         }
+                        
                     }.scaleEffect(0.75).padding(.top, 340).padding(.leading, -190)
                 }
                 
@@ -119,7 +120,7 @@ struct StatsView: View {
                                
                             Image(systemName: "chevron.backward.circle.fill").resizable().scaledToFit().frame(width: 30, height: 35)
                                 .opacity(0.7)
-                                Text("Stats").font(.system(size: 37, weight: .light))
+//                                Text("Stats").font(.system(size: 34, weight: .bold))
                         }
                         
                         
@@ -127,6 +128,8 @@ struct StatsView: View {
                     }.buttonStyle(GentlePressStyle())
                 }
             }
+        }.onAppear {
+            viewModel.computeTimeSpent()
         }
     }
 }
@@ -144,4 +147,6 @@ struct DayStat: Identifiable {
     StatsView().environmentObject(ContentViewModel())
 }
 
+
+// Total time = total minutes/60 = 9.95= 9H:57 min
 

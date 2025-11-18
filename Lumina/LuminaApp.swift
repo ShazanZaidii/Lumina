@@ -14,7 +14,7 @@ struct LuminaApp: App {
         WindowGroup {
             if viewModel.hasEnteredApp{
                 HomeView()
-                                .preferredColorScheme(viewModel.isDarkMode ? .dark : .light)
+                    .preferredColorScheme(viewModel.isDarkMode ? .dark : .light)
             }
             else{
                 EntryView()
@@ -23,3 +23,4 @@ struct LuminaApp: App {
         }
     }
 }
+

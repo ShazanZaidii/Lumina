@@ -17,7 +17,6 @@ struct GentlePressStyle: ButtonStyle {
     }
 }
 
-
 struct ButtonView: View {
     @EnvironmentObject var viewModel: ContentViewModel
     let title: String
@@ -26,13 +25,11 @@ struct ButtonView: View {
         Button {
             viewModel.pause = true
             viewModel.controlsImageIndex = 1
-            
             action()
         } label: {
             Text(title).font(.system(size: 24, weight: .heavy)).frame(width: 105, height: 48).foregroundStyle(viewModel.isDarkMode ? Color.black : Color.white).background(viewModel.isDarkMode ? Color.white : Color.black).clipShape(Capsule())
         }
         .buttonStyle(GentlePressStyle())
-        
     }
 }
 

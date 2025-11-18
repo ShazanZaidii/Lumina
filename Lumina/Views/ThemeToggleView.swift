@@ -54,6 +54,7 @@ struct ThemeToggleView: View {
             .onTapGesture {
                 withAnimation(.spring(response: 0.5, dampingFraction: 0.7)) {
                     viewModel.isDarkMode.toggle()
+                    
                 }
             }
         }

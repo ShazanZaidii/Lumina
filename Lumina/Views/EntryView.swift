@@ -26,8 +26,10 @@ struct EntryView: View {
                     
                     //Enter Button
                     Button {
+                        viewModel.playSound()
                         viewModel.hasEnteredApp = true
                         navigateToMain = true
+                        
                         
                     } label: {
                         Text("Enter")
@@ -58,6 +60,4 @@ struct EntryView: View {
 #Preview {
     EntryView()
 }
-
-
 
